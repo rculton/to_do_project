@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+  before_action :require_permission, only: [:edit, :delete]
+  
+  def require_permission
+    if current_user != User.find(params[:id])
+      redirect_to root_path
+    end
+  end
+
   def index
   end
 
@@ -15,19 +23,35 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       redirect_to user_path(@user)
-      #session[:user_id] = @user.id
+      session[:user_id] = @user.id
     else
       redirect_to new_user_path
     end
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      redirect_to edit_user_path(@user)
+    end
   end
 
   def destroy
+    @user = User.find(params[:id])
+    if @user.destroy
+      redirect_to root_path
+      session[:user_id] = @user.id
+
+    else 
+      redirect_to user_path(@user)
+    end
+
   end
 
   private

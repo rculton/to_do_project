@@ -1,5 +1,11 @@
 class TasksController < ApplicationController
-  def index
+
+  before_action :require_permission
+  
+  def require_permission
+    if current_user != Task.find(params[:id]).user
+      redirect_to root_path
+    end
   end
 
   def show

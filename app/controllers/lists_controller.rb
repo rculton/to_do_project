@@ -1,6 +1,14 @@
 class ListsController < ApplicationController
-  def index
+
+  before_action :require_permission
+  
+  def require_permission
+    if current_user != List.find(params[:id]).user
+      redirect_to root_path
+    end
   end
+
+  
 
   def show
     @list = List.find(params[:id])

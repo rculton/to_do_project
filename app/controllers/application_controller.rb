@@ -9,9 +9,13 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_user
   end
+  
+  # def check_owner
+
+  # end
 
   def authorize
-    unless logged_in? #&& check_user?
+    unless logged_in?
       flash[:danger] = "You must be logged in to that account do that"
       redirect_to new_session_path 
     end
