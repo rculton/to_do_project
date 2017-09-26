@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
 
-  before_action :require_permission
+  before_action :require_permission, only: [:edit, :destroy, :show]
+  before_action :authorize, only: [:new]
   
   def require_permission
     if current_user != List.find(params[:id]).user
@@ -21,7 +22,8 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-    if @list.save(list_params)
+    @list.user = current_user
+    if @list.save
       redirect_to list_path(@list)
     else
       redirect_to new_list_path
@@ -34,6 +36,7 @@ class ListsController < ApplicationController
 
   def update
     @list = List.find(params[:id])
+    @list.user = current_user
     if @list.update(list_params)
       redirect_to list_path(@list)
     else
@@ -52,6 +55,6 @@ class ListsController < ApplicationController
 
   private
   def list_params
-    params.require(:list).permit(:title, :user_id)
+    params.require(:list).permit(:title)
   end
 end

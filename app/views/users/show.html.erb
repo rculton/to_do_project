@@ -2,6 +2,8 @@
 
 <h2>Here's <%=@user.name%>'s Lists</h2>
 
+<%= button_to 'Add New List', new_list_path, method: 'get' %>
+
 <ul>
 <% @lists.each do |l| %>
 <li>
@@ -9,5 +11,7 @@
 </li>
 <% end %>
 </ul>
+
+<%= button_to 'Add New List', new_list_path, method: 'get' %>
 
 <%= button_to 'Edit User', edit_user_path, method: 'get' %>

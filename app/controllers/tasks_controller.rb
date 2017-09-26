@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
 
-  before_action :require_permission
+  before_action :require_permission, only: [:edit, :destroy, :show]
+  before_action :authorize, only: [:new]
   
   def require_permission
     if current_user != Task.find(params[:id]).user
@@ -14,11 +15,13 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+    @user = current_user
   end
 
   def create
     @task = Task.new(task_params)
-    if @task.save(task_params)
+    @task.user = current_user
+    if @task.save
       redirect_to task_path(@task)
     else
       redirect_to new_task_path
@@ -49,6 +52,6 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:body, :details, :list_id, :user_id)
+    params.require(:task).permit(:body, :details, :list_id, :complete)
   end
 end

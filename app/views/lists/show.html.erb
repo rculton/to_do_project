@@ -5,11 +5,17 @@
 <ul>
     <% @tasks.each do |t| %>
     <li>
+        <% if t.complete %>
+            <s>
+        <% end %>
         <%= link_to t.body, task_path(t.id) %>
+        <% if t.complete %>
+        <s/>
+        <% end %>
     </li>
     <% end %>
 </ul>
-
+<%= button_to 'Add New Task', new_task_path, method: 'get' %>
 <br /> <br />
 
 <%= button_to 'Edit List', edit_list_path, method: 'get' %>
