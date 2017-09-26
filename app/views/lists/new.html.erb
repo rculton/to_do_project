@@ -1,2 +1,7 @@
-<h1>List#new</h1>
-<p>Find me in app/views/list/new.html.erb</p>
+<h1>Create a new list!</h1>
+<%= form_for @list do |f| %>
+<%= f.label :user_id %>:
+<%= f.collection_select(:user_id, User.all, :id, :name) %>
+<%= f.text_field :title, placeholder: "Title" %>
+<%= f.submit %>
+<% end %>

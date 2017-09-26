@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  root 'users#index'
+  root 'users#index' ##this will be our pseudo-home page
 
   resources :users
-  resources :lists
-  resources :tasks
+  resources :lists, except: [:index]
+  resources :tasks, except: [:index]
 
   resources :sessions, only: [:new, :create]
   delete '/logout' => 'sessions#destroy', as: :logout
