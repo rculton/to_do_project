@@ -3,3 +3,6 @@
 <h2><%= @task.body %></h2>
 <h2><%= @task.details %></h2>
 <h2><%= @task.completed?.to_s %></h2>
+<br />
+<br />
+<%= button_to 'Edit Task', edit_task_path, method: 'get' %>
