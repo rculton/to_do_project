@@ -1,0 +1,11 @@
+<h1>List#show</h1>
+
+<h2>This is the list called <%= @list.title %></h2>
+<h3>These are its tasks</h3>
+<ul>
+    <% @tasks.each do |t| %>
+    <li>
+        <%= link_to t.body, task_path(t.id) %>
+    </li>
+    <% end %>
+</ul>

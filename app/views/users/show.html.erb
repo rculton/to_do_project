@@ -1,0 +1,11 @@
+<h1>Users#show</h1>
+
+<h2>Here's <%=@user.name%>'s Lists</h2>
+
+<ul>
+<% @lists.each do |l| %>
+<li>
+    <%= link_to l.title, list_path(l.id)%>
+</li>
+<% end %>
+</ul>
