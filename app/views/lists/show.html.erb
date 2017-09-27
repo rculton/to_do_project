@@ -10,7 +10,9 @@
                         <% if t.complete %>
                                         <!-- Conditionally show strikethrough text -->
                             <s><%= link_to t.body, task_path(t.id), class: "list-group-item list-group-item-action disabled" %></s>
-                        <% else %>
+                        <% elsif t.priority %>
+                            <b><%= link_to t.body, task_path(t.id), class: "list-group-item list-group-item-action" %></b>
+                        <% else t.priority %>
                             <%= link_to t.body, task_path(t.id), class: "list-group-item list-group-item-action" %>
                         <% end %>
                     </div>

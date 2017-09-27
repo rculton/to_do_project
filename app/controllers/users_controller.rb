@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :require_permission, only: [:edit, :delete]
-  before_action :authorize, only: [:show]
+  before_action :require_permission, only: [:edit, :delete, :show]
+  #before_action :authorize, only: [:show]
   
   def require_permission
     if current_user != User.find(params[:id])

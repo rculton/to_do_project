@@ -7,6 +7,8 @@
 <!-- Display if task is complete in plain english -->
 <small>This task is <b><%=@task.complete ? 'completed' : 'not completed' %></b></small>
 <br />
+<small>This task is <b><%=@task.priority ? 'a priority' : 'not a priority' %></b></small>
+<br />
 <br />
 <div class="container-fluid">
         <div class="btn-group" role="group" aria-label="Basic example">
