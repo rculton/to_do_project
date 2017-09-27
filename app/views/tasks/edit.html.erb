@@ -1,16 +1,37 @@
 <h1>Edit Task</h1>
 <%= form_for @task do |f| %>
-<%= f.label :list_id %>:
-<%= f.collection_select(:list_id, current_user.lists, :id, :title) %>
-<%= f.text_field :body, placeholder: "The Task" %>
-<%= f.text_area :details, placeholder: "Additional Details" %>
-<%= f.label "Is this task complete?"%>
-<%= f.check_box :complete%>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+               <%=f.label "Select List:"%> <%= f.collection_select :list_id, current_user.lists, :id, :title, class: "btn btn-default dropdown-toggle"%>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col">
+            <%= f.text_field :body, placeholder: "The Task", class:"form-control" %>
+        </div>
+        <div class="col form-check">
+                <%= f.check_box :complete, class: "form-check-input"%>
+                <%= f.label "Task Complete?"%>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <%= f.text_area :details, placeholder: "Additional Details", class:"form-control"%>
+        </div>
+    </div>
+
+</div>
+
 <br />
-<%= f.submit class: 'btn btn-success'%> %>
-<% end %>
 <div class="container-fluid">
     <div class="btn-group" role="group" aria-label="Basic example">
+            <%= f.submit class: 'btn btn-success'%>
+            <% end %>
         <%= button_to 'Cancel', task_path, method: 'get', class: 'btn btn-secondary'%>
         <%= button_to 'Delete', task_path, method: 'delete', class: 'btn btn-danger' %>
     </div>

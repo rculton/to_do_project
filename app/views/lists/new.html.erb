@@ -1,10 +1,22 @@
 <h1>Create a new list!</h1>
 <%= form_for @list do |f| %>
-<%= f.text_field :title, placeholder: "Title" %>
-<%= f.submit class: 'btn btn-success'%>
-<% end %>
+<div class="container-fluid">
+        
+    <div class="row">
+        <div class="col">
+                <%= f.text_field :title, placeholder: "Title", class:"form-control" %>
+        </div>
+
+    </div>
+
+ </div>
+
 <br />
 <div class="container-fluid">
-    <%= button_to 'Cancel', user_path(current_user), method: 'get', class: 'btn btn-secondary'%>
-<div class="container-fluid"></div>
-
+        <div class="btn-group">
+            <%= f.submit class: 'btn btn-success'%>
+            <% end %>
+            <%= button_to 'Cancel', user_path(current_user), method: 'get', class: 'btn btn-secondary'%>
+        
+        </div>
+</div>
