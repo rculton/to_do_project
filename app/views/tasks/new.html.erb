@@ -2,10 +2,12 @@
 <%= form_for @task do |f| %>
 <%= f.label :list_id %>:
 <%= f.collection_select(:list_id, current_user.lists, :id, :title) %>
-<!-- <%= f.label :user_id %>:
-<%= f.collection_select(:user_id, User.all, :id, :name) %> -->
 <%= f.text_field :body, placeholder: "The Task" %>
-<%= f.text_field :details, placeholder: "Additional Details" %>
-<%= f.check_box :complete %>
+<%= f.text_area :details, placeholder: "Additional Details" %>
+<%= f.label "Is this task complete?"%>
+<%= f.check_box :complete%>
+<br />
 <%= f.submit %>
 <% end %>
+<br /><br />
+<%= button_to 'Cancel', user_path(current_user), method: 'get'%>

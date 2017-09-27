@@ -1,8 +1,13 @@
-<h1>Task#show</h1>
+<h1><%= @task.body %></h1>
+<h2>Task Details </h2>
+<br />
+<!-- Display task details -->
+<p><%= @task.details %></p>
 
-<h2><%= @task.body %></h2>
-<h2><%= @task.details %></h2>
-<h2><%= @task.complete %></h2>
+<!-- Display if task is complete in plain english -->
+<small>This task is <b><%=@task.complete ? 'completed' : 'not completed' %></b></small>
 <br />
 <br />
 <%= button_to 'Edit Task', edit_task_path, method: 'get' %>
+<br/>
+<%= button_to 'Return', list_path(@task.list_id), method: 'get' %>

@@ -10,9 +10,6 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
   
-  # def check_owner
-
-  # end
 
   def authorize
     unless logged_in?

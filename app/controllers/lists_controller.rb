@@ -26,6 +26,7 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to list_path(@list)
     else
+      flash[:danger] = "Incorrect or missing information"
       redirect_to new_list_path
     end
   end
@@ -36,10 +37,10 @@ class ListsController < ApplicationController
 
   def update
     @list = List.find(params[:id])
-    @list.user = current_user
     if @list.update(list_params)
       redirect_to list_path(@list)
     else
+      flash[:danger] = "Incorrect or missing information"
       redirect_to edit_list_path(@list)
     end
   end

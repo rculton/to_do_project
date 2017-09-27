@@ -22,8 +22,9 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.user = current_user
     if @task.save
-      redirect_to task_path(@task)
+      redirect_to list_path(@task.list_id)
     else
+      flash[:danger] = "Incorrect or missing information"
       redirect_to new_task_path
     end
   end
@@ -37,7 +38,9 @@ class TasksController < ApplicationController
     if @task.update(task_params)
       redirect_to task_path(@task)
     else 
+      flash[:danger] = "Incorrect or missing information"
       redirect_to edit_task_path(@task)
+
     end
   end
 

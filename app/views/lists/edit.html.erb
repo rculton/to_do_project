@@ -1,9 +1,10 @@
 <h1>Edit List</h1>
 <%= form_for @list do |f| %>
-<%= f.label :user_id %>:
-<%= f.collection_select(:user_id, User.all, :id, :name) %>
 <%= f.text_field :title, placeholder: "Title" %>
-<%= f.submit %>
+<%= f.submit class: 'btn btn-success'%>
 <% end %>
-<%= button_to 'Cancel', list_path, method: 'get'%>
-<%= button_to 'Delete', list_path, method: 'delete' %>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+    <%= button_to 'Cancel', list_path, method: 'get', class: 'btn btn-secondary'%>
+    <%= button_to 'Delete', list_path, method: 'delete', class: 'btn btn-danger' %>
+</div>

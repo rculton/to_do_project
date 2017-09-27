@@ -3,9 +3,13 @@
 <%= f.label :list_id %>:
 <%= f.collection_select(:list_id, current_user.lists, :id, :title) %>
 <%= f.text_field :body, placeholder: "The Task" %>
-<%= f.text_field :details, placeholder: "Additional Details" %>
+<%= f.text_area :details, placeholder: "Additional Details" %>
+<%= f.label "Is this task complete?"%>
 <%= f.check_box :complete%>
+<br />
 <%= f.submit %>
 <% end %>
+<br /><br />
 <%= button_to 'Cancel', task_path, method: 'get'%>
+<br />
 <%= button_to 'Delete', task_path, method: 'delete' %>
