@@ -7,9 +7,9 @@
 <%= f.label "Is this task complete?"%>
 <%= f.check_box :complete%>
 <br />
-<%= f.submit %>
+<%= f.submit class: 'btn btn-success'%> %>
 <% end %>
-<br /><br />
-<%= button_to 'Cancel', task_path, method: 'get'%>
-<br />
-<%= button_to 'Delete', task_path, method: 'delete' %>
+<div class="btn-group" role="group" aria-label="Basic example">
+    <%= button_to 'Cancel', task_path, method: 'get', class: 'btn btn-secondary'%>
+    <%= button_to 'Delete', task_path, method: 'delete', class: 'btn btn-danger' %>
+</div>

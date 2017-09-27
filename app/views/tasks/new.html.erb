@@ -7,7 +7,7 @@
 <%= f.label "Is this task complete?"%>
 <%= f.check_box :complete%>
 <br />
-<%= f.submit %>
+<%= f.submit class: 'btn btn-success'%>
 <% end %>
 <br /><br />
-<%= button_to 'Cancel', user_path(current_user), method: 'get'%>
+<%= button_to 'Cancel', user_path(current_user), method: 'get', class: 'btn btn-secondary'%>

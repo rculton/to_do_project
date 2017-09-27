@@ -13,6 +13,7 @@
     <% end %>
 </ul>
 <div class="btn-group" role="group" aria-label="Basic example">
+        <%= button_to 'Return', user_path(current_user), method: 'get',class: 'btn btn-primary' %>
     <%= button_to 'Add New Task', new_task_path, method: 'get', class: 'btn btn-outline-primary' %>
     <%= button_to 'Edit List', edit_list_path, method: 'get', class: 'btn btn-outline-secondary' %>
 </div>

@@ -8,6 +8,7 @@
 <small>This task is <b><%=@task.complete ? 'completed' : 'not completed' %></b></small>
 <br />
 <br />
-<%= button_to 'Edit Task', edit_task_path, method: 'get' %>
-<br/>
-<%= button_to 'Return', list_path(@task.list_id), method: 'get' %>
+<div class="btn-group" role="group" aria-label="Basic example">
+        <%= button_to 'Return', list_path(@task.list_id), method: 'get',class: 'btn btn-primary' %>
+        <%= button_to 'Edit Task', edit_task_path, method: 'get', class: 'btn btn-outline-secondary' %>
+</div>

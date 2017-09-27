@@ -3,3 +3,6 @@
 <%= f.text_field :title, placeholder: "Title" %>
 <%= f.submit class: 'btn btn-success'%>
 <% end %>
+<br /> <br />
+<%= button_to 'Cancel', user_path(current_user), method: 'get', class: 'btn btn-secondary'%>
+
