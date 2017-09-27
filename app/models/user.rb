@@ -4,4 +4,6 @@ class User < ApplicationRecord
     has_many :tasks
     validates :email, :name, presence: true
     validates :email, uniqueness: true
+    validates :password, presence: true
+    validates :name, presence: true
 end

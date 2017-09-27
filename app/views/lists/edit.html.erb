@@ -1,11 +1,21 @@
 <h1>Edit List</h1>
 <%= form_for @list do |f| %>
-<%= f.text_field :title, placeholder: "Title" %>
-<%= f.submit class: 'btn btn-success'%>
-<% end %>
+
+
+
+<div class="container-fluid">
+        <div class="row">
+                <div class="col">
+                        <%= f.text_field :title, placeholder: "Title", class: "form-control" %>
+                </div>
+        </div>
+
+</div>
 
 <div class="container-fluid">
     <div class="btn-group" role="group" aria-label="Basic example">
+            <%= f.submit class: 'btn btn-success'%>
+            <% end %>
         <%= button_to 'Cancel', list_path, method: 'get', class: 'btn btn-secondary'%>
         <%= button_to 'Delete', list_path, method: 'delete', class: 'btn btn-danger' %>
     </div>

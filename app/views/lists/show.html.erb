@@ -1,16 +1,25 @@
 <h1><%= @list.title %></h1>
 <h3>Tasks</h3>
-<div class="container-fluid">
+<div class="container">
 
         <ul class="list-group" style="list-style:none">
-            <% @tasks.each do |t| %>
+            <% @tasks.each do |t| %>           
             <li>
-                <!-- Conditionally show strikethrough text -->
-                <% if t.complete %>
-                    <s><%= link_to t.body, task_path(t.id), class: "list-group-item list-group-item-action disabled" %></s>
-                <% else %>
-                    <%= link_to t.body, task_path(t.id), class: "list-group-item list-group-item-action" %>
-                <% end %>
+                <div class="row">
+                    <div class="col-8">
+                        <% if t.complete %>
+                                        <!-- Conditionally show strikethrough text -->
+                            <s><%= link_to t.body, task_path(t.id), class: "list-group-item list-group-item-action disabled" %></s>
+                        <% else %>
+                            <%= link_to t.body, task_path(t.id), class: "list-group-item list-group-item-action" %>
+                        <% end %>
+                    </div>
+                    <div class="col-">
+                            <%= button_to 'X', task_path(t.id), method: 'delete', class: 'btn btn-danger delete_btn' %>
+                    </div>
+                </div>
+
+               
             </li>
             <% end %>
         </ul>

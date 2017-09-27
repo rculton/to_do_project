@@ -1,9 +1,24 @@
 <%= form_tag sessions_path, {:class => ''} do %>
 <h1>Sign In</h1>
-<%= label_tag :email, 'Email', class: '' %>
-<%= text_field_tag :email, params[:email], class: '' %>
-<%= label_tag :password, 'Password', class: '' %>
-<%= password_field_tag :password, nil, class: '' %>
-<%= submit_tag 'Log in', class: '' %>
-<%= link_to "Don't have an account?", new_user_path, class: '' %>
-<% end %>
+<div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                    <%= label_tag :email, 'Email', class: '' %>
+                    <%= text_field_tag :email, params[:email], class: 'form-control' %>
+            </div>
+            <div class="col">
+                    <%= label_tag :password, 'Password', class: '' %>
+                    <%= password_field_tag :password, nil, class: 'form-control' %>
+            </div>
+        </div>
+</div>
+
+<div class="container-fluid">
+    <div class="btn-group" role="group" aria-label="Basic example">
+            <%= submit_tag 'Log in', class: 'btn btn-success' %>
+            <% end %>
+            <%= button_to "Sign up", new_user_path, class: 'btn btn-outline-success' %>
+            <%= button_to 'Cancel', root_path, method: 'get', class:"btn btn-outline-primary"%>
+    </div>
+</div>
+
