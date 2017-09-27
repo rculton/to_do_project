@@ -1,20 +1,27 @@
 <h1><%= @list.title %></h1>
 <h3>Tasks</h3>
-<ul>
-    <% @tasks.each do |t| %>
-    <li>
-        <!-- Conditionally show strikethrough text -->
-        <% if t.complete %>
-            <s><%= link_to t.body, task_path(t.id) %></s>
-        <% else %>
-            <%= link_to t.body, task_path(t.id) %>
-        <% end %>
-    </li>
-    <% end %>
-</ul>
-<div class="btn-group" role="group" aria-label="Basic example">
+<div class="container-fluid">
+
+        <ul class="list-group" style="list-style:none">
+            <% @tasks.each do |t| %>
+            <li>
+                <!-- Conditionally show strikethrough text -->
+                <% if t.complete %>
+                    <s><%= link_to t.body, task_path(t.id), class: "list-group-item list-group-item-action disabled" %></s>
+                <% else %>
+                    <%= link_to t.body, task_path(t.id), class: "list-group-item list-group-item-action" %>
+                <% end %>
+            </li>
+            <% end %>
+        </ul>
+    
+</div>
+<br />
+<div class="container-fluid">
+    <div class="btn-group" role="group" aria-label="Basic example">
         <%= button_to 'Return', user_path(current_user), method: 'get',class: 'btn btn-primary' %>
-    <%= button_to 'Add New Task', new_task_path, method: 'get', class: 'btn btn-outline-primary' %>
-    <%= button_to 'Edit List', edit_list_path, method: 'get', class: 'btn btn-outline-secondary' %>
+        <%= button_to 'Add New Task', new_task_path, method: 'get', class: 'btn btn-outline-primary' %>
+        <%= button_to 'Edit List', edit_list_path, method: 'get', class: 'btn btn-outline-secondary' %>
+    </div>
 </div>
 

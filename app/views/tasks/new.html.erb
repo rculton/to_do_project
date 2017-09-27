@@ -4,10 +4,16 @@
 <%= f.collection_select(:list_id, current_user.lists, :id, :title) %>
 <%= f.text_field :body, placeholder: "The Task" %>
 <%= f.text_area :details, placeholder: "Additional Details" %>
+
+
 <%= f.label "Is this task complete?"%>
 <%= f.check_box :complete%>
+
+
 <br />
 <%= f.submit class: 'btn btn-success'%>
 <% end %>
 <br /><br />
-<%= button_to 'Cancel', user_path(current_user), method: 'get', class: 'btn btn-secondary'%>
+<div class="container-fluid">
+    <%= button_to 'Cancel', user_path(current_user), method: 'get', class: 'btn btn-secondary'%>
+</div>
