@@ -1,52 +1,52 @@
-#README for Task-lite
+# README for Task-lite
 
-##Technology Used
+## Technology Used
 
-###Ruby on Rails
+### Ruby on Rails
 
 This was used to do all the website navigation, forms, database management, and any neccesary logic decisions.
 
 
-###Bootstrap
+### Bootstrap
 
 This CSS tool was used for the styling. It's allowed me to create a more user-friendly UI.
 
 
-###Why so few technologies?
+### Why so few technologies?
 
 One of my personal goals for this project was to accomplish as much as I could using only these tools, so I could improve my skill with them. I have future plans to add more technologies to this project as time goes on.
 
 
-##Approach Taken
+## Approach Taken
 
-###Phase 1: Papers Please!
+### Phase 1: Papers Please!
 
 I started the project by modeling all of my data by hand in a notebook. I did my ERDs and Wireframes on paper, along with my user stories and my routes. This helped me to define a clear idea of where I wanted to go in the project, and in what order I would build everything.
 
-###Phase 2: Hard Cold Code
+### Phase 2: Hard Cold Code
 
 The second part of this project was translating everything I had on paper into functional code. With a clear design path, and easily accessable references for my data models, I was able to put together a functional, but ugly, product.
 
 First I put together the basic database with one user, one list, and one task. Then I created a way to view the user, the list, and the task. Then I added a way to create a new user, a new list, and a new task. Then editing the user, the list, and the task. I then jumped to putting together a sessions controller to allow for logging in and out of the app, before finally implementing a way to delete tasks, then lists, then users (which relied on a log-out like function to end sessions)
 
-###Phase 3: Pulling My Project Up By Bootstraps
+### Phase 3: Pulling My Project Up By Bootstraps
 
 I went back to each of my views and began adding the bootstrap syntax to make everything more appealing and a bit formatted. Admittedly one of my own weaknesses is in visual design, so I opted for a minimalistic design using a black and grey color scheme. The only thing with color are the buttons, which are color coded in the hopes that it's easier to see it and know what it does without ever having to read it. 
 
-###Phase 4: Digital Documentation and Heroku
+### Phase 4: Digital Documentation and Heroku
 
 After putting together the project, I unloaded everything from my notebooks and paper scraps into a Trello board where other people could access it, and hopefully understand it. I also uploaded the project to Heroku, where it can be functionally usable to others.
 
 
-##How to Install the Project
+## How to Install the Project
 
-###Requirements
+### Requirements
 
 This app requires postgresql to use locally. (Installation tutorials [here](http://postgresguide.com/setup/install.html)) 
 
 This app also requires rails. (Installation tutorial [here](http://installrails.com/))
 
-###Installation Instructions
+### Installation Instructions
 
  1. Run this in the console
 
@@ -79,6 +79,6 @@ Unsolved Problems, Next Steps, and Planned Features
 5. Making lists private or public, so users can choose to show them to others.
 
 
-##Trello
+## Trello
 
 [Trello for this application (includes ERD and Wireframes)](https://trello.com/b/7PYGczdR/to-do-application)
