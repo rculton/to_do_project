@@ -82,3 +82,6 @@ Unsolved Problems, Next Steps, and Planned Features
 ## Trello
 
 [Trello for this application (includes ERD and Wireframes)](https://trello.com/b/7PYGczdR/to-do-application)
+
+####Contact Me:
+If you notice anything wrong with the project, installation instructions, or anything, and you want to reach out, you can reach me at [rculton@gmail.com](mailto:rculton@gmail.com)
