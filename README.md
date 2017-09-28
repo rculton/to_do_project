@@ -1,5 +1,7 @@
 # README for Task-lite
 
+Link to app on Heroku: https://gentle-woodland-53740.herokuapp.com/
+
 ## Technology Used
 
 ### Ruby on Rails
