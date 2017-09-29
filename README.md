@@ -44,6 +44,8 @@ This app requires postgresql to use locally. (Installation tutorials [here](http
 
 This app also requires rails. (Installation tutorial [here](http://installrails.com/))
 
+Clone the project. (Cloning instructions [here](https://help.github.com/articles/cloning-a-repository/))
+
 ### Installation Instructions
 
  1. Run this in the console
