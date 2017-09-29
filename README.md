@@ -8,6 +8,9 @@ Link to app on Heroku: https://gentle-woodland-53740.herokuapp.com/
 
 This was used to do all the website navigation, forms, database management, and any neccesary logic decisions.
 
+#### Extra Gems
+[FontAwesome](https://github.com/FortAwesome/font-awesome-sass)
+
 
 ### Bootstrap
 
