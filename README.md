@@ -35,10 +35,6 @@ First I put together the basic database with one user, one list, and one task. T
 
 I went back to each of my views and began adding the bootstrap syntax to make everything more appealing and a bit formatted. Admittedly one of my own weaknesses is in visual design, so I opted for a minimalistic design using a black and grey color scheme. The only thing with color are the buttons, which are color coded in the hopes that it's easier to see it and know what it does without ever having to read it. 
 
-### Phase 4: Digital Documentation and Heroku
-
-After putting together the project, I unloaded everything from my notebooks and paper scraps into a Trello board where other people could access it, and hopefully understand it. I also uploaded the project to Heroku, where it can be functionally usable to others.
-
 
 ## How to Install the Project
 
